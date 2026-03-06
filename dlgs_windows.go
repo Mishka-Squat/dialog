@@ -122,7 +122,7 @@ func openfile(flags uint32, b *FileBuilder) (d filedlg) {
 		d.filters = append(d.filters, utf16.Encode([]rune(filt.Desc))...)
 		d.filters = append(d.filters, 0)
 		for _, ext := range filt.Extensions {
-			s := fmt.Sprintf(".%s;", ext)
+			s := fmt.Sprintf("*.%s;", ext)
 			d.filters = append(d.filters, utf16.Encode([]rune(s))...)
 		}
 		d.filters = append(d.filters, 0)
