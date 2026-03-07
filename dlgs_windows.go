@@ -66,7 +66,7 @@ func (b *FileBuilder) save() (string, error) {
 	if w32.GetSaveFileName(d.opf) {
 		filename := d.Filename()
 		filterExt := b.Filters[d.opf.FilterIndex-1].Extensions
-		fileext := path.Ext(filename)
+		fileext := path.Ext(filename)[1:]
 		if slices.Contains(filterExt, fileext) {
 			return filename, nil
 		}
